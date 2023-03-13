@@ -29,5 +29,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
     composer install ${COMPOSER_INSTALL_ARGS}
 
 COPY --chown=www-data:www-data . /var/www/
+RUN chown -R www-data:www-data /var/www
+RUN chmod 777 /var/www
 
 USER www-data

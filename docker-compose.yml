@@ -23,8 +23,7 @@ services:
       - ./:/var/www
       - .docker/nginx:/etc/nginx/conf.d
     ports:
-      - "80:80"
-      - "443:433"
+      - "8081:80"
     links:
       - php:php
     depends_on:

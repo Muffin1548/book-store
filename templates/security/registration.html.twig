@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Регистрация{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+    <div> Имя пользователя
+        {{ form_widget(form.username) }}
+    </div>
+    <div> Почта
+        {{ form_widget(form.email) }}
+    </div>
+    <div>
+        {{ form_widget(form.password) }}
+    </div>
+    <div>
+        <button type="submit">
+            Зарегистрироваться
+        </button>
+    </div>
+    <div>
+        <p>
+            Уже есть учетная запись?
+        </p>
+        <a href="{{ path('app_login') }}" class="uk-button uk-button-default">
+            <span class="ion-android-person"></span>&nbsp; Войти
+        </a>
+    </div>
+    {{ form_end(form) }}
+{% endblock %}
