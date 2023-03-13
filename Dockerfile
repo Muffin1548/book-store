@@ -18,7 +18,11 @@ RUN apt-get update; apt-get install --no-install-recommends --no-install-suggest
     symfony-cli
 
 RUN docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-    && docker-php-ext-install pdo pgsql pdo_pgsql \
+    && docker-php-ext-install \
+    pdo \
+    pgsql  \
+    pdo_pgsql \
+    opcache \
     && rm -rf /var/lib/apt/lists/*
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer \
